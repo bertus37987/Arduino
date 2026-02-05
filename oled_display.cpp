@@ -5,7 +5,6 @@
 
 Adafruit_SSD1306 display(128, 64, &Wire, -1);
 
-int zaehler = 0; // Variable für unseren Zähler
 
 void setup() {
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // Display starten
@@ -16,12 +15,8 @@ void setup() {
 void loop() {
   display.clearDisplay();      // 1. Alten Inhalt löschen
   display.setCursor(0, 10);    // 2. Schreibposition setzen
-  
-  display.println("counter"); // Text schreiben
-  display.print(zaehler);      // Variable schreiben
+  display.print("Hallo, 10c");
   
   display.display();           // 3. Anzeigen!
-  
-  zaehler = zaehler + 1;       // Zähler erhöhen
-  delay(1000);                 // 1 Sekunde warten
+
 }
